@@ -1,0 +1,94 @@
+
+<button type="button" class="btn btn-outline-info" >Add Task</button>
+<br><br>
+
+    <div class="row">
+        <div class="col-12 col-md-4">
+              <div class="list-group" >
+                  <div  class="list-group-item list-group-item-action list-group-item-info">
+                    On Going Tasks
+                  </div>
+                  <span class="min-height"  
+                  [dragula]='"bag-one"' 
+                  [dragulaModel]='ongoingTasks' 
+                  id="ongoing">
+                  <a 
+                  *ngFor="let task of ongoingTasks"  
+                  class="list-group-item list-group-item-action"
+                  [id]="task._id">{{task.title}}</a>
+                </span>
+                </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="list-group"  >
+            <a  class="list-group-item list-group-item-action list-group-item-warning">
+              On Hold Tasks
+            </a>
+            <span 
+            class="min-height"  
+            [dragula]='"bag-one"' 
+            [dragulaModel]='onholdTasks'
+            id="onhold">
+            <a 
+            *ngFor="let task of onholdTasks" 
+            class="list-group-item list-group-item-action"
+            [id]="task._id"  
+            >{{task.title}}</a>
+          </span>
+          </div>
+          <br><br>
+
+          <div class="list-group"  >
+            <a  class="list-group-item list-group-item-action list-group-item-danger">
+              Uergent Tasks
+            </a>
+            <span 
+            class="min-height"  
+            [dragula]='"bag-one"' 
+            [dragulaModel]='urgentTasks'
+            id="urgent">
+            <a 
+            *ngFor="let task of urgentTasks"   
+            class="list-group-item list-group-item-action"
+            [id]="task._id">{{task.title}}</a>
+          </span>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="list-group"  >
+            <a  class="list-group-item list-group-item-action list-group-item-primary">
+              Today Tasks
+            </a>
+            <span 
+            class="min-height"  
+            [dragula]='"bag-one"' 
+            [dragulaModel]='todayTasks'
+            id="today">
+            <a 
+            *ngFor="let task of todayTasks"   
+            class="list-group-item list-group-item-action"
+            [id]="task._id">{{task.title}}</a>
+          </span>
+          </div>
+          <br><br>
+          <div class="list-group"  >
+            <a  class="list-group-item list-group-item-action list-group-item-success">
+             Completed
+            </a>
+            <span 
+            class="min-height"  
+            [dragula]='"bag-one"' 
+            [dragulaModel]='completedTasks'
+            id="completed">
+            <a 
+            *ngFor="let task of completedTasks"   
+            class="list-group-item list-group-item-action"
+            [id]="task._id">{{task.title}}</a>
+          </span>
+          </div>
+
+        </div>
+      </div>
+
+
