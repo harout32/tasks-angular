@@ -12,7 +12,8 @@ import { DragulaModule, DragulaService } from 'ng2-dragula/ng2-dragula';
 @NgModule({
     declarations:[
         DashboardComponent,
-        IndividualTasksComponent
+        IndividualTasksComponent,
+        AddTaskModalComponent
     ],
     entryComponents:[AddTaskModalComponent],
     imports:[
@@ -20,6 +21,7 @@ import { DragulaModule, DragulaService } from 'ng2-dragula/ng2-dragula';
         SharedModule,
         DragulaModule,
         SharedModule
+       
     ],
 providers: [
     DragulaService
