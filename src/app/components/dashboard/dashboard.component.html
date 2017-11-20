@@ -1,25 +1,13 @@
-<ul class="nav justify-content-end">
-    <li class="nav-item">
-      <a class="nav-link " (click)="logout()"  style="cursor:pointer"> LogOut</a>
-    </li>
-  </ul>
-
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12 col-md-2">
-        <div class="nav flex-column nav-pills">
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['your-tasks']" >Your Tasks</a>
-          <a class="nav-link" href="#">Team Tasks</a>
-          <a class="nav-link" href="#">Messages</a>
-        </div>
+<div class="grid container">
+  <div class="col-12 col-md-2">
+    <div class="nav flex-column nav-pills">
+      <a class="side-buttons" mat-button color="accent" routerLinkActive="active" [routerLink]="['your-tasks']" >Your Tasks</a>
+      <a class="side-buttons" mat-button color="accent" >Team Tasks</a>
+      <a class="side-buttons" mat-button color="accent" >Messages</a>
     </div>
-      <div class="col-12 col-md-10">
-        <router-outlet></router-outlet>
-      </div>
+</div>
+<span>
+  <router-outlet></router-outlet>
+</span>
 
-
-      
-    
-  </div>
 </div>

@@ -10,24 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(
-    private tasksService:TasksService,
-    private authService:AuthService,
-    private router:Router
-  ) { }
+  constructor() { }
 
   ngOnInit() {
   }
-  
-  logout(){
-    this.authService.onLogOut().subscribe(
-      (res)=>{
-        localStorage.clear();
-        this.router.navigate(['/auth/login']);
-      },(err)=>{
-      }
-    );
-  }
-
-
 }

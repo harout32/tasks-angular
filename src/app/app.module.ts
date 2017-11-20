@@ -1,26 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
-import { RouterModule, Routes } from '@angular/router';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //custom modules
 import { SharedModule } from './shared/shared.module';
-// import { AuthModule } from './components/auth/auth.module';
-
-//guards
-import { AuthGuard } from './services/auth.guard';
-
-//services
-import { TasksService } from './services/tasks.service';
-import { AuthService } from './services/auth.service';
+import { CoreModule } from './components/core/core.module';
 //app component which we bootstrap
 import { AppComponent } from './app.component';
-
-const routes : Routes = [
-  { path: '', redirectTo:'/dashboard', pathMatch:'full' },
-  { path: 'dashboard', loadChildren: './components/dashboard/dashboard.module#DashboardModule', canLoad:[AuthGuard]},
-  { path: 'auth', loadChildren: './components/auth/auth.module#AuthModule'}
-]
 
 @NgModule({
   declarations: [
@@ -28,12 +13,10 @@ const routes : Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
-    HttpModule,
-    // AuthModule,
-    SharedModule
+    BrowserAnimationsModule,
+    CoreModule,
+    SharedModule,
   ],
-  providers: [AuthGuard,TasksService, AuthService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

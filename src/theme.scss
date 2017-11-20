@@ -1,0 +1,23 @@
+//material icons import
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+// $font-family : '"Open Sans", "Halvativa Neue", sans-serif';
+
+//defineing a custom theme
+@import '~@angular/material/_theming';
+
+@include mat-core();
+
+$app-primary: mat-palette($mat-blue, 600,300,900);
+$app-accent:  mat-palette($mat-teal, 600,300,900);
+$app-warn:    mat-palette($mat-red, 600,300,900); 
+
+
+$app-theme: mat-light-theme($app-primary,$app-accent,$app-warn);
+
+@include angular-material-theme($app-theme);
+//define custom typography
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+$app-typography: mat-typography-config(
+    $font-family:'"Open Sans", "Halvativa Neue", sans-serif'
+);
+@include angular-material-typography($app-typography);

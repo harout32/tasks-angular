@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    margin:0;
+}
+.grid{
+    display: grid;
+}
+.task-group{
+    background-color:grey;
+    padding: 0px 5px 5px 5px ;
+    margin:20px 5px;
+    width:300px;
+    text-align: center;
+}
+.task-category{
+
+}
+.task-item{
+    min-height: 5px;
+    display: block;
+    background-color:lightgrey;
+    a{
+        width:100%;
+    }
+}

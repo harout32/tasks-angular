@@ -1,28 +1,26 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
 import { SharedModule } from '../../shared/shared.module';
-import { DashboardComponent } from './dashboard.component';
-import { IndividualTasksComponent } from './individual-tasks/individual-tasks.component';
-
-import { DragulaModule, DragulaService } from 'ng2-dragula/ng2-dragula';
 import { DashboardRouteModule } from './dashboard.route.module';
 
+import { DashboardComponent } from './dashboard.component';
+import { IndividualTasksComponent } from './individual-tasks/individual-tasks.component';
+import { AddTaskModalComponent } from './add-task-modal/add-task-modal.component';
+
+
+import { DragulaModule, DragulaService } from 'ng2-dragula/ng2-dragula';
 
 @NgModule({
     declarations:[
         DashboardComponent,
         IndividualTasksComponent
     ],
-   
+    entryComponents:[AddTaskModalComponent],
     imports:[
-        CommonModule,
         DashboardRouteModule,
         SharedModule,
         DragulaModule,
         SharedModule
     ],
-
 providers: [
     DragulaService
 ]

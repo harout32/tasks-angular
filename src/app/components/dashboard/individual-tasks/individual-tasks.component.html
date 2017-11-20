@@ -1,94 +1,89 @@
 
-<button type="button" class="btn btn-outline-info" >Add Task</button>
+<button type="button" class="btn btn-outline-info">Add Task</button>
 <br><br>
+<!-- <div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="Enter your email" required>
+  </mat-form-field>
+  <button mat-button color="primary">Primary</button>
+</div> -->
 
-    <div class="row">
-        <div class="col-12 col-md-4">
-              <div class="list-group" >
-                  <div  class="list-group-item list-group-item-action list-group-item-info">
+
+              <div class="task-group" >
+                  <div  class="task-category">
                     On Going Tasks
                   </div>
-                  <span class="min-height"  
+                  <span class="task-item"  
                   [dragula]='"bag-one"' 
                   [dragulaModel]='ongoingTasks' 
                   id="ongoing">
-                  <a 
+                  <a  mat-button
                   *ngFor="let task of ongoingTasks"  
-                  class="list-group-item list-group-item-action"
+    
                   [id]="task._id">{{task.title}}</a>
                 </span>
                 </div>
-        </div>
 
-        <div class="col-12 col-md-4">
-          <div class="list-group"  >
-            <a  class="list-group-item list-group-item-action list-group-item-warning">
+
+
+          <div class="task-group"  >
+            <a  class="task-category">
               On Hold Tasks
             </a>
             <span 
-            class="min-height"  
+            class="task-item"  
             [dragula]='"bag-one"' 
             [dragulaModel]='onholdTasks'
             id="onhold">
-            <a 
+            <a  mat-button
             *ngFor="let task of onholdTasks" 
-            class="list-group-item list-group-item-action"
             [id]="task._id"  
             >{{task.title}}</a>
           </span>
           </div>
-          <br><br>
 
-          <div class="list-group"  >
-            <a  class="list-group-item list-group-item-action list-group-item-danger">
+          <div class="task-group"  >
+            <a  class="task-category">
               Uergent Tasks
             </a>
             <span 
-            class="min-height"  
+            class="task-item"  
             [dragula]='"bag-one"' 
             [dragulaModel]='urgentTasks'
             id="urgent">
-            <a 
+            <a  mat-button
             *ngFor="let task of urgentTasks"   
-            class="list-group-item list-group-item-action"
             [id]="task._id">{{task.title}}</a>
           </span>
           </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="list-group"  >
-            <a  class="list-group-item list-group-item-action list-group-item-primary">
+          <div class="task-group"  >
+            <a  class="task-category">
               Today Tasks
             </a>
             <span 
-            class="min-height"  
+            class="task-item"  
             [dragula]='"bag-one"' 
             [dragulaModel]='todayTasks'
             id="today">
-            <a 
+            <a  mat-button
             *ngFor="let task of todayTasks"   
-            class="list-group-item list-group-item-action"
             [id]="task._id">{{task.title}}</a>
           </span>
           </div>
-          <br><br>
-          <div class="list-group"  >
-            <a  class="list-group-item list-group-item-action list-group-item-success">
+          <div class="task-group"  >
+            <a  class="task-category">
              Completed
             </a>
             <span 
-            class="min-height"  
+            class="task-item"  
             [dragula]='"bag-one"' 
             [dragulaModel]='completedTasks'
             id="completed">
-            <a 
+            <a  mat-button
             *ngFor="let task of completedTasks"   
-            class="list-group-item list-group-item-action"
             [id]="task._id">{{task.title}}</a>
           </span>
           </div>
 
-        </div>
-      </div>
 
 
